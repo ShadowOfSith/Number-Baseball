@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h1>
+<pre>
+<script type="text/javascript">
+	let dojeonsoo=0;
+	let ball=0;
+	let strike=0;
+	alert('숫자야구 게임입니다.');
+	let random= new Array();
+	random[1]=Math.floor(Math.random()*9)+1;
+	random[2]=Math.floor(Math.random()*9)+1;
+	random[3]=Math.floor(Math.random()*9)+1;
+	if(random[1]==random[2])
+	{
+		random[2]=Math.floor(Math.random()*9)+1;
+	}
+	if(random[1]==random[3])
+	{
+		random[3]=Math.floor(Math.random()*9)+1;
+	}
+	if(random[2]==random[3])
+	{
+		random[3]=Math.floor(Math.random()*9)+1;
+	}
+	while(strike<=3)
+	{
+	ball=0;
+	strike=0;
+	dojeonsoo++
+	let gabs1=prompt('첫번째 값을 입력하세요.','');
+	let gabs2=prompt('두번째 값을 입력하세요.','');
+	let gabs3=prompt('세번째 값을 입력하세요.','');
+	let gwayeon1=gesan1(gabs1, gabs2, gabs3);
+	let gwayeon2=gesan2(gabs1, gabs2, gabs3);
+	let gwayeon3=gesan3(gabs1, gabs2, gabs3);
+	function gesan1(x,y,z)
+	{
+		if(random[1]==x)
+		{
+			strike++;
+		}
+		else if(random[1]==y||random[1]==z)
+		{
+			ball++;
+		}
+	}
+	function gesan2(x,y,z)
+	{
+		if(random[2]==y)
+		{
+			strike++;
+		}
+		else if(random[2]==x||random[2]==z)
+		{
+			ball++;
+		}
+	}
+	function gesan3(x,y,z)
+	{
+		if(random[3]==z)
+		{
+			strike++;
+		}
+		else if(random[3]==x||random[3]==y)
+		{
+			ball++;
+		}
+	}
+	if(strike!=3)
+		{
+			alert('볼:'+ball);
+			alert('스트라이크:'+strike);
+		}
+	if(strike==3)
+		{
+			break;
+		}
+	}
+	document.writeln('삼진아웃!');
+	document.write('시도 횟수:'+dojeonsoo);
+</script>
+</pre>
+</h1>
+</body>
+</html>
