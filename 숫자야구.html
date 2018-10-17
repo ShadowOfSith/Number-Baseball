@@ -4,18 +4,18 @@
 	<title></title>
 </head>
 <body>
-<p>
-<font size="45">
-<pre>
 <script type="text/javascript">
+	//도전횟수
 	let dojeonsoo=0;
 	let ball=0;
 	let strike=0;
 	alert('숫자야구 게임입니다.');
+	//1~9까지의 랜덤수
 	let random= new Array();
 	random[1]=Math.floor(Math.random()*9)+1;
 	random[2]=Math.floor(Math.random()*9)+1;
 	random[3]=Math.floor(Math.random()*9)+1;
+	//중복확인
 	if(random[1]==random[2])
 	{
 		random[2]=Math.floor(Math.random()*9)+1;
@@ -33,12 +33,17 @@
 	ball=0;
 	strike=0;
 	dojeonsoo++
-	let gabs1=prompt('첫번째 값을 입력하세요.','');
-	let gabs2=prompt('두번째 값을 입력하세요.','');
-	let gabs3=prompt('세번째 값을 입력하세요.','');
+	//값 입력받기
+	let gabs=prompt('3개의 값을 동시에 붙여서 입력하세요.','ex)123');
+	let gabs1=gabs%10;
+	gabs=Math.floor(gabs/10);
+	let gabs2=gabs%10;
+	gabs=Math.floor(gabs/10);
+	let gabs3=gabs%10;
 	let gwayeon1=gesan1(gabs1, gabs2, gabs3);
 	let gwayeon2=gesan2(gabs1, gabs2, gabs3);
 	let gwayeon3=gesan3(gabs1, gabs2, gabs3);
+	//계산
 	function gesan1(x,y,z)
 	{
 		if(random[1]==x)
@@ -72,6 +77,7 @@
 			ball++;
 		}
 	}
+	//출력
 	if(strike!=3)
 		{
 			alert('볼:'+ball);
@@ -82,11 +88,8 @@
 			break;
 		}
 	}
-	document.writeln('삼진아웃!');
-	document.write('시도 횟수:'+dojeonsoo);
+	//최종출력
+	location.replace("result.html")
 </script>
-</pre>
-</font>
-</p>
 </body>
 </html>
