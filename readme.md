@@ -3,6 +3,9 @@
 <head>
 </head>
 <body>
-<a href="index.html">시작</a>
+<font size="45">
+<strong>Number Baseball</strong>
+<a href="https://shadowofsith.github.io/Number-Baseball/">시작</a>
+</font>
 </body>
 </html>
