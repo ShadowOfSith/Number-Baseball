@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Number Baseball</title>
+	<script language="javascript">
+		function idong()
+		{
+			location.replace("숫자야구.html");
+		}
+		function end()
+		{
+			self.close();
+		}
+	</script>
+</head>
+<body>
+<script type="text/javascript">
+	//도전횟수
+	let dojeonsoo=0;
+	let ball=0;
+	let strike=0;
+	//1~9까지의 랜덤수
+	let random= new Array();
+	random[1]=Math.floor(Math.random()*9)+1;
+	random[2]=Math.floor(Math.random()*9)+1;
+	random[3]=Math.floor(Math.random()*9)+1;
+	//중복확인
+	if(random[1]==random[2])
+	{
+		random[2]=Math.floor(Math.random()*9)+1;
+	}
+	if(random[1]==random[3])
+	{
+		random[3]=Math.floor(Math.random()*9)+1;
+	}
+	if(random[2]==random[3])
+	{
+		random[3]=Math.floor(Math.random()*9)+1;
+	}
+	while(strike<=3)
+	{
+	ball=0;
+	strike=0;
+	dojeonsoo++
+	//값 입력받기
+	let gabs=prompt(dojeonsoo+'회','ex)123');
+	let gabs3=gabs%10;
+	gabs=Math.floor(gabs/10);
+	let gabs2=gabs%10;
+	gabs=Math.floor(gabs/10);
+	let gabs1=gabs%10;
+	let gwayeon1=gesan1(gabs1, gabs2, gabs3);
+	let gwayeon2=gesan2(gabs1, gabs2, gabs3);
+	let gwayeon3=gesan3(gabs1, gabs2, gabs3);
+	//계산
+	function gesan1(x,y,z)
+	{
+		if(random[1]==x)
+		{
+			strike++;
+		}
+		else if(random[1]==y||random[1]==z)
+		{
+			ball++;
+		}
+	}
+	function gesan2(x,y,z)
+	{
+		if(random[2]==y)
+		{
+			strike++;
+		}
+		else if(random[2]==x||random[2]==z)
+		{
+			ball++;
+		}
+	}
+	function gesan3(x,y,z)
+	{
+		if(random[3]==z)
+		{
+			strike++;
+		}
+		else if(random[3]==x||random[3]==y)
+		{
+			ball++;
+		}
+	}
+	//출력
+	if(strike!=3)
+	{
+		alert('<'+dojeonsoo+'회 결과>'+'\n\n볼:'+ball+'\n스트라이크:'+strike);
+	}
+	if(strike==3)
+	{
+		break;
+	}
+	if(dojeonsoo==12)
+	{
+		break;
+	}
+	}
+	if(dojeonsoo==12)
+	{
+		location.replace('fail.html');
+	}
+</script>
+<center>
+<strong><font size="45">삼진아웃!! 축하합니다!!<br></font></strong>
+<img src="http://www.gammonsdaily.com/wp-content/uploads/2014/02/Ron-Kulpa-umpire.jpg" width="700"><br>
+<font size="45">
+<script type="text/javascript">
+	document.write('도전횟수:'+dojeonsoo);
+</script>
+</font><br>
+<input type="button" onclick="idong()" value="다시하기">
+<input type="button" onclick="end()" value="끝내기">
+</center>
+</body>
+</html>

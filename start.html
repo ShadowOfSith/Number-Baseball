@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Number Baseball</title>
+	<script language="javascript">
+		function start()
+		{
+			location.replace("숫자야구.html");
+		}
+	</script>
+</head>
+<body>
+<font size="45"><strong><p>Number-Baseball</p></strong></font>
+<strong><h1>방법</h1></strong>
+<ol>
+	<li>랜덤으로 숫자 3개가 순서대로 뽑아집니다.(각 숫자 3개의 범위는 1~9입니다)</li>
+	<li>당신은 숫자 3개를 한번에 입력 합니다.</li>
+	<li>당신이 입력한 숫자중에 랜덤 숫자와 순서와 상관없이 맞는 숫자가 있으면 볼 카운트가 1증가합니다.</li>
+	<li>당신이 입력한 숫자중에 랜덤 숫자와 순서까지 맞는 숫자가 있으면 스트라이크 카운트가 1증가합니다.</li>
+	<li>당신이 입력한 숫자 모두가 순서까지 동일하면 삼진아웃이 됩니다.(=승리)</li>
+	<li>게임은 12회 까지 있으며 12회까지 삼진아웃을 하지 못하면 당신은 패배합니다.(=패배)</li>
+	<input type="button" onclick="start()" value="시작">
+</body>
+</html>
