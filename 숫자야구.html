@@ -2,6 +2,16 @@
 <html>
 <head>
 	<title></title>
+	<script language="javascript">
+		function idong()
+		{
+			location.replace("숫자야구.html");
+		}
+		function end()
+		{
+			self.close();
+		}
+	</script>
 </head>
 <body>
 <script type="text/javascript">
@@ -88,8 +98,12 @@
 			break;
 		}
 	}
-	//최종출력
-	location.replace("result.html")
 </script>
+<center>
+<strong><font size="45">삼진아웃!! 축하합니다!!<br></font></strong>
+<img src="http://www.gammonsdaily.com/wp-content/uploads/2014/02/Ron-Kulpa-umpire.jpg" width="700"><br>
+<input type="button" onclick="idong()" value="다시하기">
+<input type="button" onclick="end()" value="끝내기">
+</center>
 </body>
 </html>
