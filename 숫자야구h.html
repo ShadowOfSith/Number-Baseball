@@ -5,7 +5,7 @@
 	<script language="javascript">
 		function idong()
 		{
-			location.replace("index.html");
+			location.replace("main.html");
 		}
 		function end()
 		{
@@ -25,17 +25,41 @@
 	random[2]=Math.floor(Math.random()*9)+1;
 	random[3]=Math.floor(Math.random()*9)+1;
 	//중복확인
-	if(random[1]==random[2])
+	while(random[1]==random[2])
 	{
 		random[2]=Math.floor(Math.random()*9)+1;
+		while(random[2]==random[3])
+		{
+			random[3]=Math.floor(Math.random()*9)+1;
+			while(random[1]==random[3])
+			{
+				random[3]=Math.floor(Math.random()*9)+1;
+			}
+		}
 	}
-	if(random[1]==random[3])
+	while(random[2]==random[3])
 	{
 		random[3]=Math.floor(Math.random()*9)+1;
+		while(random[1]==random[2])
+		{
+			random[2]=Math.floor(Math.random()*9)+1;
+			while(random[1]==random[3])
+			{
+				random[3]=Math.floor(Math.random()*9)+1;
+			}
+		}
 	}
-	if(random[2]==random[3])
+	while(random[1]==random[3])
 	{
 		random[3]=Math.floor(Math.random()*9)+1;
+		while(random[2]==random[3])
+		{
+			random[3]=Math.floor(Math.random()*9)+1;
+			while(random[1]==random[2])
+			{
+				random[2]=Math.floor(Math.random()*9)+1;
+			}
+		}
 	}
 	while(strike<=3)
 	{
